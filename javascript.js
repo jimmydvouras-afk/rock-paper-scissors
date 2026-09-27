@@ -9,8 +9,28 @@ function getHumanChoice() {
 
 getHumanChoice();
 
-
 // allow the computer to input rock, paper, or scissors
+function getComputerChoice() {
+    const randomValue = Math.random();
+
+  if (randomValue < 1 / 3) {
+
+    return 'rock';
+
+  } else if (randomValue < 2 / 3) {
+
+    return 'paper';
+
+  } else {
+
+    return 'scissors';
+
+  }
+}
+
+computerChoice = getComputerChoice();
+computerMessage = 'Computer has chosen ' + computerChoice;
+console.log(computerMessage);
 
 // write the logic for what beats what
 
