@@ -1,7 +1,14 @@
-// WRITE A PROGRAM THAT PLAYS ROCK PAPER SCISSORS
+// allow the user to input rock, paper, or scissors (make case insensitive)
+function getHumanChoice() {
+    let humanChoice = prompt('Rock, Paper, or Scissors?');
+    humanChoice = humanChoice.toLowerCase();
+    humanMessage = 'You have chosen ' + humanChoice;
+    console.log(humanMessage);
+    return humanChoice;
+}
 
+getHumanChoice();
 
-// allow the user to input rock, paper, or scissors
 
 // allow the computer to input rock, paper, or scissors
 
