@@ -68,6 +68,22 @@ function playRound(humanChoice, computerChoice) {
 const round = playRound(humanChoice, computerChoice);
 
 // make win counter
+let humanScore = 0;
+let computerScore = 0;
 
+function winCounter (humanScore, computerScore) {
+  if (round === 'win') {
+    humanScore = humanScore + 1;
+  }
+  else if (round === 'loss') {
+    computerScore = computerScore + 1;
+  }
+  else {
+    console.log('No score change!');
+  }
+  console.log('Your score: ' + humanScore + ' Computer score: ' + computerScore);
+}
+
+winCounter(humanScore, computerScore);
 
 // make the entire game 5 rounds
