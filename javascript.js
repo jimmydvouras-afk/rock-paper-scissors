@@ -7,8 +7,6 @@ function getHumanChoice() {
     return humanChoice;
 }
 
-const humanChoice = getHumanChoice();
-
 // allow the computer to input rock, paper, or scissors
 function getComputerChoice() {
     const randomValue = Math.random();
@@ -27,10 +25,6 @@ function getComputerChoice() {
 
   }
 }
-
-const computerChoice = getComputerChoice();
-computerMessage = 'Computer has chosen ' + computerChoice;
-console.log(computerMessage);
 
 // write the logic for 1 round
 function playRound(humanChoice, computerChoice) {
@@ -65,13 +59,12 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-const round = playRound(humanChoice, computerChoice);
 
-// make win counter
+// make score counter
 let humanScore = 0;
 let computerScore = 0;
 
-function winCounter (humanScore, computerScore) {
+function winCounter (round) {
   if (round === 'win') {
     humanScore = humanScore + 1;
   }
@@ -84,6 +77,31 @@ function winCounter (humanScore, computerScore) {
   console.log('Your score: ' + humanScore + ' Computer score: ' + computerScore);
 }
 
-winCounter(humanScore, computerScore);
-
 // make the entire game 5 rounds
+function playGame () {
+  for (;humanScore < 5 && computerScore < 5;) {
+    let humanChoice = getHumanChoice();
+    let computerChoice = getComputerChoice();
+    computerMessage = 'Computer has chosen ' + computerChoice;
+    console.log(computerMessage);
+    let round = playRound(humanChoice, computerChoice);
+    winCounter(round);
+  }
+if (humanScore === 5) {
+  console.log('Congratulations! You have won!');
+} else {
+  console.log('You lost the game! Better luck next time!');
+}
+
+}
+playGame();
+
+
+
+//get human choice
+//get computer choice
+//play a round
+//get result of round
+//change score counter depending on the result of round
+//repeat until someone has 5 points
+//declare winner
